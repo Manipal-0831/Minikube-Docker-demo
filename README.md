@@ -21,12 +21,19 @@ The following files confirm the successful completion of the task:
 The following steps were executed and verified via the corresponding screenshots:
 
 **1. Cluster Start**
+    `open Git`
+    `mkdir minikube-demo`( the directory is as your preferences)
+    `cd minikube-demo`
+    `create deployment.yaml, service.yaml files as per your project need`
+    then `git init,
+     git add .
+     git commit -m "minikube demo"`
     `minikube start --driver=docker `
-     minikube status ( to know the satus of minikube )
+    `minikube status` ( to know the satus of minikube )
 <img width="745" height="449" alt="Image" src="https://github.com/user-attachments/assets/9b510ef0-d240-4df3-9822-c70a32c807c2" />
 **2. Deployment** 
     `kubectl apply -f deployment.yaml`
-     kubectl apply -f service.yaml
+    `kubectl apply -f service.yaml`
 **3. Initial Pods** 
     `kubectl get pods` 
      Confirms the initial **2 Pods** are in a **Running** state.
@@ -51,7 +58,8 @@ The following steps were executed and verified via the corresponding screenshots
      type the https://,..... on screen after running the above command
      the below image provides same 
 <img width="1920" height="403" alt="Image" src="https://github.com/user-attachments/assets/a4e635d9-7e39-46fc-b88e-35ebd4fefbbf" />
-
+    `git remote add origin repo-url` ( replace repo-url with url which is code -> https)`
+    `git push origin main`
 ## Cleanup
 
 The following commands were run after successful completion and documentation to safely free up local system resources:
