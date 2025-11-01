@@ -1,0 +1,22 @@
+# deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-web-deployment
+  labels:
+    app: webserver
+spec:
+  replicas: 2 # Specifies the number of identical pods
+  selector:
+    matchLabels:
+      app: webserver
+  template:
+    metadata:
+      labels:
+        app: webserver
+    spec:
+      containers:
+      - name: echoserver-container
+        image: k8s.gcr.io/echoserver:1.10 # A simple image that echoes request info
+        ports:
+        - containerPort: 8080

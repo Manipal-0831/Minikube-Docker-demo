@@ -1,0 +1,13 @@
+# service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-web-service
+spec:
+  selector:
+    app: webserver # Must match the 'app' label from the deployment
+  type: NodePort # This type makes the service accessible from outside the cluster
+  ports:
+    - protocol: TCP
+      port: 80 # The port the service itself exposes
+      targetPort: 8080 # The port the container is listening on (from deployment.yaml)
